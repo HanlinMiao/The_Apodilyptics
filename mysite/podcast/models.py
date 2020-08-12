@@ -20,4 +20,15 @@ class podcast(models.Model):
 		
 	def get_absolute_url(self):
 		return reverse('podcast-detail', kwargs = {'pk': self.pk})
-	
+class Comment(models.Model):
+	podcast = models.ForeignKey('podcast', on_delete = models.CASCADE, related_name = 'comments')
+	author = models.CharField(max_length =200)
+	comment = models.TextField(max_length = 200)
+	created_date = models.DateTimeField(default = timezone.now)
+	approved_comment = models.BooleanField(default = False)
+
+	def approve(self):
+		self.approved_comment = True
+		self.save()
+	def __str__(self):
+		return self.comment

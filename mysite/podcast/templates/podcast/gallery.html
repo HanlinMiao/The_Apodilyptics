@@ -1,0 +1,33 @@
+{% extends "podcast/base.html" %}
+{% load static %}
+{% block content %}
+{% block css %}
+  {{block.super}}
+  <link rel="stylesheet" type = "text/css" href = "{% static 'podcast/image.css' %}">
+{% endblock %}
+<div class = "gallery">
+  	<a href ="{% url 'resume-hanlin' %}"  style = "color:black" >
+    	 <img src="../../media/profile_pics/hanlin_2.jpeg" class = "myimg"/>
+    	<div class ="fadebox">
+    		<div class = "title text">
+    			<p>Hanlin Miao</p>
+    		</div>
+    	</div>
+    </a> 
+</div>
+<strong>Hanlin Miao</strong>
+<br>
+
+<div class = "gallery">
+    <a href ="{% url 'resume-hanlin' %}"  style = "color:black" >
+       <img src="../../media/profile_pics/vince.jpeg" class = "myimg"/>
+      <div class ="fadebox">
+        <div class = "title text">
+          <p>Vincent Cortese</p>
+        </div>
+      </div>
+    </a> 
+</div>
+<strong>Vincent Cortese</strong>
+<br>
+{% endblock %}

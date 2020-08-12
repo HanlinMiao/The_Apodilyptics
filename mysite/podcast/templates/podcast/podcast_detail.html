@@ -15,6 +15,17 @@
                     <source src="{{podcast.file.url}}" type="audio/mp3">
                 </audio>
             </div>
+            <hr>
+            <button class = "button button2"><a href="{% url 'add_comment_to_podcast' pk=podcast.pk %}">Add comment</a></button>
+				{% for comment in podcast.comments.all %}
+				    <div class="comment">
+				    	<strong>{{ comment.author }}</strong>
+				        <div class="date" style = "color:gray;font-size:10px;">{{ comment.created_date }}</div>
+				        <p>{{ comment.comment|linebreaks }}</p>
+				    </div>
+				{% empty %}
+				    <p>No comments here yet :( Be the first to react to the podcast!</p>
+				{% endfor %}
 		 </div>
 		</article>
 {% endblock content %}
