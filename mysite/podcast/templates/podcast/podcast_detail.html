@@ -1,0 +1,20 @@
+{% extends "podcast/base.html" %}
+{% block content %}
+		<article class="media content-section">
+			<img class= "rounded-circle article-img" src = "{{ podcast.logo.url }}">
+		  <div class="media-body">
+		    <div class="article-metadata">
+		      <a class="mr-2" href="#">{{ object.hosts }}</a>
+		      <small class="text-muted">{{ object.date_posted|date:"F d, Y"}}</small>
+		    </div>
+		    <h2 class="article-title">{{ object.title }}</h2>
+		    <p class="article-content">{{ object.description }}</p>
+		    <div class="media-wrapper">
+		    	
+                <audio id="player2" preload="auto" controls style="color:white; width:auto">
+                    <source src="{{podcast.file.url}}" type="audio/mp3">
+                </audio>
+            </div>
+		 </div>
+		</article>
+{% endblock content %}
