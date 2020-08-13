@@ -16,7 +16,7 @@
                 </audio>
             </div>
             <hr>
-            <button class = "button button2"><a href="{% url 'add_comment_to_podcast' pk=podcast.pk %}">Add comment</a></button>
+            <a href= "{% url 'add_comment_to_podcast' pk=podcast.pk %}"><button class = "button button2">Add comment</button></a>
 				{% for comment in podcast.comments.all %}
 				    <div class="comment">
 				    	<strong>{{ comment.author }}</strong>

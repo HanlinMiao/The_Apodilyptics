@@ -28,17 +28,17 @@
           </button>
           <div class="collapse navbar-collapse" id="navbarToggle">
             <div class="navbar-nav mr-auto">
-              <a class="nav-item nav-link" href="{% url 'podcast-home' %}">Home</a>
-              <a class="nav-item nav-link" href="{% url 'podcast-home' %}">Videos</a>
-              <a class="nav-item nav-link" href="{% url 'podcast-gallery' %}">Gallery</a>
+              <a class="nav-item nav-link" href="{% url 'podcast-home' %}"><i class="fa fa-home" aria-hidden="true"></i>Home</a>
+              <a class="nav-item nav-link" href="{% url 'podcast-home' %}"><i class="fa fa-youtube" aria-hidden="true"></i>Videos</a>
+              <a class="nav-item nav-link" href="{% url 'podcast-gallery' %}"><i class="fa fa-picture-o" aria-hidden="true"></i>Gallery</a>
              <div class="dropdown">
-                <a class=" nav-item nav-link dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <a class=" nav-item nav-link dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user-circle-o" aria-hidden="true"></i>
                   About Us
                 </a>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                   <a class="dropdown-item" href="{% url 'choice' %}">Resume&nbsp;&nbsp;<i class="fa fa-paper-plane-o" aria-hidden="true"></i></a>
                   <a class="dropdown-item" href="#">Project&nbsp;&nbsp;<i class="fa fa-university" aria-hidden="true"></i></a>
-                  <a class="dropdown-item" href="#">Podcast&nbsp;&nbsp;<i class="fa fa-podcast" aria-hidden="true"></i></a>
+                  <a class="dropdown-item" href="{%url 'podcast-home' %}">Podcast&nbsp;&nbsp;<i class="fa fa-podcast" aria-hidden="true"></i></a>
                   <a class="dropdown-item" href="#">Spotify Music&nbsp;&nbsp;<i class="fa fa-spotify" aria-hidden="true"></i></a>
                 </div>
               </div>
@@ -71,7 +71,7 @@
             <h3>Our Sidebar</h3>
             <p class='text-muted'>You can put any information here you'd like.
               <ul class="list-group">
-                <li class="list-group-item list-group-item-light">Polls</li>
+                <li class="list-group-item list-group-item-light"><a href = "{% url 'polls-home'%}">Polls</a></li>
                 <li class="list-group-item list-group-item-light">Announcements</li>
                 <li class="list-group-item list-group-item-light">Calendar</li>
                 <li class="list-group-item list-group-item-light">etc</li>

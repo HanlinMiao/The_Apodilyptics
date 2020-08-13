@@ -3,6 +3,9 @@ from django.views.generic import (ListView, DetailView, CreateView, UpdateView, 
 from .models import podcast
 from .forms import CommentForm
 # Create your views here.
+def homepage(request):
+	return render(request, 'podcast/homepage.html')
+
 def home(request):
     context = {
         'podcasts': podcast.objects.all()

@@ -1,9 +1,14 @@
+{% extends "podcast/base.html"%}
+{% block content%}
 {% if latest_question_list %}
-    <ul>
     {% for question in latest_question_list %}
-        <li><a href="{% url 'polls-detail' question.id %}">{{ question.question_text }}</a></li>
+    	<div class="polls">
+    		<div class = "date">{{question.pub_date}}</div>
+        	<a href="{% url 'polls-detail' question.id %}">{{ question.question_text }}</a>
+        </div>
+        <br>
     {% endfor %}
-    </ul>
 {% else %}
     <p>No polls are available.</p>
 {% endif %}
+{% endblock %}

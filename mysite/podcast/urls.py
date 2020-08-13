@@ -1,9 +1,10 @@
 from django.urls import path
 from . import views
-from .views import PodListView, PodDetailView, test, resume_hanlin, choice
+from .views import PodListView, PodDetailView, test, resume_hanlin, choice, homepage
 
 urlpatterns =[
-	path('', PodListView.as_view(), name ='podcast-home'),
+	path('', views.homepage, name = 'homepage'),
+	path('podcast/', PodListView.as_view(), name ='podcast-home'),
 	path('gallery/', views.gallery, name ='podcast-gallery'),
 	path('resume/', views.choice, name = 'choice'),
 	path('resume/hanlin/', views.resume_hanlin, name = 'resume-hanlin'),
